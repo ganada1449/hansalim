@@ -6,7 +6,6 @@
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>한살림 장보기 :: 지구를 살리는 뜻깊은 생활실천, 한살림</title>
-    <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/jquery.min.js"></script>
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
@@ -16,7 +15,7 @@
     <link rel="stylesheet" href="js/swiper/swiper.min.css">
     <script src="js/swiper/swiper.min.js"></script>
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
     <script src="js/script.js"></script>
 </head>
@@ -53,7 +52,7 @@
                             <span>공급일</span>
                         </a>
                     </div>
-                    <ul class="mymenu right clearfix">
+                    <ul class="mymenu right">
                         <li>
                             <a href="#">로그인</a>
                         </li>
@@ -108,9 +107,10 @@
                             <li><a href="#">기획전</a></li>
                             <li><a href="#" class="category-dot">영유아</a></li>
                             <li><a href="#" class="category-dot">채식</a></li>
-                            <li><a href="#" class="category-list-more">참여</a>
+                            <li>
+                                <a href="#" class="category-list-more">참여</a>
                                 <ul class="category-list-2">
-                                    <li><a href="#">신규물품</a></li>
+                                    <li><a href="#">신규물품제안</a></li>
                                     <li><a href="#">솜씨자랑</a></li>
                                 </ul>
                             </li>
@@ -129,8 +129,8 @@
                     </div>
                     <div class="search-wrap right">
                         <form action="" class="search-form">
+                            <input type="text" class="search-form-txt" id="s-txt">
                             <label for="s-txt" class="s-txt-label">무엇을 찾아드릴까요?</label>
-                            <input type="text" class="searsh-form-txt" id="s-txt">
                             <input type="image" src="images/btnSearch.png" class="search-form-img">
                         </form>
                         <a href="#" class="cart">
@@ -187,7 +187,7 @@
                 <!-- //우측 이동버튼 -->
                 <!-- 슬라이드 콘트롤러 -->
                 <div class="sw-visual-control">
-                    <span class="sw-visual-bt sw-visual-bt-play"></span>
+                    <span class="sw-visual-bt"></span>
                     <div class="swiper-pagination sw-visual-pg"></div>
                     <a href="#" class="sw-visual-more"></a>
                 </div>
@@ -639,6 +639,11 @@
                         <div class="good-box">
                             <a href="#" class="good-box-link">
                                 <span class="good-box-img"><img src="images/famous_2.jpg" alt="제품"></span>
+                                <p class="good-box-special">
+                                    <span>유기농</span>
+                                    <span>무농약</span>
+                                    <span>무농약원료</span>
+                                </p>
                                 <span class="good-box-pop">인기</span>
                                 <span class="good-box-name">백미/유(8kg)</span>
                                 <span class="good-box-price">35,500<em>원</em></span>
@@ -650,6 +655,11 @@
                         <div class="good-box">
                             <a href="#" class="good-box-link">
                                 <span class="good-box-img"><img src="images/famous_3.jpg" alt="제품"></span>
+                                <p class="good-box-special">
+                                    <span>유기농</span>
+                                    <span>무농약</span>
+                                    <span>무농약원료</span>
+                                </p>
                                 <span class="good-box-pop">인기</span>
                                 <span class="good-box-name">귀리(무/500g)</span>
                                 <span class="good-box-price">4,850<em>원</em></span>
@@ -661,6 +671,11 @@
                         <div class="good-box">
                             <a href="#" class="good-box-link">
                                 <span class="good-box-img"><img src="images/famous_4.jpg" alt="제품"></span>
+                                <p class="good-box-special">
+                                    <span>유기농</span>
+                                    <span>무농약</span>
+                                    <span>무농약원료</span>
+                                </p>
                                 <span class="good-box-pop">인기</span>
                                 <span class="good-box-name">현미/유(2kg)</span>
                                 <span class="good-box-price">8,650<em>원</em></span>
@@ -1472,9 +1487,9 @@
                         <div class="recipe-con-list">
                             <div class="recipe-con-scroll">
                                 <div class="recipe-con-item">
-                                    <span class="recipe-con-item-bt" deta-money="5000"></span>
+                                    <span class="recipe-con-item-bt" data-money="5000"></span>
                                     <a href="#" class="recipe-con-link">
-                                        <span class="recipe-cocn-img">
+                                        <span class="recipe-con-img">
                                             <img src="images/recipe_1.jpg" alt="제품">
                                         </span>
                                         <p class="recipe-con-txt">
@@ -1484,50 +1499,50 @@
                                     </a>
                                 </div>
                                 <div class="recipe-con-item">
-                                    <span class="recipe-con-item-bt" deta-money="500"></span>
+                                    <span class="recipe-con-item-bt" data-money="500"></span>
                                     <a href="#" class="recipe-con-link">
-                                        <span class="recipe-cocn-img">
+                                        <span class="recipe-con-img">
                                             <img src="images/recipe_2.jpg" alt="제품">
                                         </span>
                                         <p class="recipe-con-txt">
-                                            다진마늘/난지형(유:200g) <br>
-                                            <b>4,900<em>원</em></b>
+                                            감자(2kg) <br>
+                                            <b>6,700<em>원</em></b>
                                         </p>
                                     </a>
                                 </div>
                                 <div class="recipe-con-item">
-                                    <span class="recipe-con-item-bt" deta-money="850"></span>
+                                    <span class="recipe-con-item-bt" data-money="850"></span>
                                     <a href="#" class="recipe-con-link">
-                                        <span class="recipe-cocn-img">
+                                        <span class="recipe-con-img">
                                             <img src="images/recipe_3.jpg" alt="제품">
                                         </span>
                                         <p class="recipe-con-txt">
-                                            다진마늘/난지형(유:200g) <br>
-                                            <b>4,900<em>원</em></b>
+                                            고수(30g) <br>
+                                            <b>2,150<em>원</em></b>
                                         </p>
                                     </a>
                                 </div>
                                 <div class="recipe-con-item">
-                                    <span class="recipe-con-item-bt" deta-money="4000"></span>
+                                    <span class="recipe-con-item-bt" data-money="4000"></span>
                                     <a href="#" class="recipe-con-link">
-                                        <span class="recipe-cocn-img">
+                                        <span class="recipe-con-img">
                                             <img src="images/recipe_4.jpg" alt="제품">
                                         </span>
                                         <p class="recipe-con-txt">
-                                            다진마늘/난지형(유:200g) <br>
-                                            <b>4,900<em>원</em></b>
+                                            마요네즈(140g) <br>
+                                            <b>4,400<em>원</em></b>
                                         </p>
                                     </a>
                                 </div>
                                 <div class="recipe-con-item">
-                                    <span class="recipe-con-item-bt" deta-money="1700"></span>
+                                    <span class="recipe-con-item-bt" data-money="1700"></span>
                                     <a href="#" class="recipe-con-link">
-                                        <span class="recipe-cocn-img">
+                                        <span class="recipe-con-img">
                                             <img src="images/recipe_5.jpg" alt="제품">
                                         </span>
                                         <p class="recipe-con-txt">
-                                            다진마늘/난지형(유:200g) <br>
-                                            <b>4,900<em>원</em></b>
+                                            순살삼치(350g/4조각) <br>
+                                            <b>8,400<em>원</em></b>
                                         </p>
                                     </a>
                                 </div>
@@ -1574,13 +1589,13 @@
                             <div class="swiper-slide">
                                 <div class="review-list">
                                     <div class="review-list-good">
-                                        <a href="#" class="reivew-list-name">
+                                        <a href="#" class="review-list-name">
                                             유정란(15알/국내산)
                                         </a>
-                                        <span class="reivew-list-rating">
+                                        <span class="review-list-rating">
                                             5.0
                                         </span>
-                                        <a href="#" class="reivew-list-img">
+                                        <a href="#" class="review-list-img">
                                             <img src="images/review_1.jpg" alt="제품">
                                         </a>
                                     </div>
@@ -1600,13 +1615,13 @@
                             <div class="swiper-slide">
                                 <div class="review-list">
                                     <div class="review-list-good">
-                                        <a href="#" class="reivew-list-name">
+                                        <a href="#" class="review-list-name">
                                             복숭아(2kg)
                                         </a>
-                                        <span class="reivew-list-rating">
+                                        <span class="review-list-rating">
                                             5.0
                                         </span>
-                                        <a href="#" class="reivew-list-img">
+                                        <a href="#" class="review-list-img">
                                             <img src="images/review_2.jpg" alt="제품">
                                         </a>
                                     </div>
@@ -1623,13 +1638,13 @@
                             <div class="swiper-slide">
                                 <div class="review-list">
                                     <div class="review-list-good">
-                                        <a href="#" class="reivew-list-name">
+                                        <a href="#" class="review-list-name">
                                             즉석사골떡국(159g)
                                         </a>
-                                        <span class="reivew-list-rating">
+                                        <span class="review-list-rating">
                                             5.0
                                         </span>
-                                        <a href="#" class="reivew-list-img">
+                                        <a href="#" class="review-list-img">
                                             <img src="images/review_3.jpg" alt="제품">
                                         </a>
                                     </div>
@@ -1646,13 +1661,13 @@
                             <div class="swiper-slide">
                                 <div class="review-list">
                                     <div class="review-list-good">
-                                        <a href="#" class="reivew-list-name">
+                                        <a href="#" class="review-list-name">
                                             알렉산드리아(1.5kg/유/청포도)
                                         </a>
                                         <span class="reivew-list-rating">
                                             5.0
                                         </span>
-                                        <a href="#" class="reivew-list-img">
+                                        <a href="#" class="review-list-img">
                                             <img src="images/review_4.jpg" alt="제품">
                                         </a>
                                     </div>
@@ -1669,13 +1684,13 @@
                             <div class="swiper-slide">
                                 <div class="review-list">
                                     <div class="review-list-good">
-                                        <a href="#" class="reivew-list-name">
+                                        <a href="#" class="review-list-name">
                                             미효담 발효한방 탄력앰플(50㎖)
                                         </a>
-                                        <span class="reivew-list-rating">
+                                        <span class="review-list-rating">
                                             5.0
                                         </span>
-                                        <a href="#" class="reivew-list-img">
+                                        <a href="#" class="review-list-img">
                                             <img src="images/review_5.jpg" alt="제품">
                                         </a>
                                     </div>
@@ -1693,13 +1708,13 @@
                             <div class="swiper-slide">
                                 <div class="review-list">
                                     <div class="review-list-good">
-                                        <a href="#" class="reivew-list-name">
+                                        <a href="#" class="review-list-name">
                                             통밀40식빵(420g)
                                         </a>
-                                        <span class="reivew-list-rating">
+                                        <span class="review-list-rating">
                                             5.0
                                         </span>
-                                        <a href="#" class="reivew-list-img">
+                                        <a href="#" class="review-list-img">
                                             <img src="images/review_6.jpg" alt="제품">
                                         </a>
                                     </div>
@@ -1778,7 +1793,7 @@
                     <p class="com-tel">1661-0800</p>
                     <span class="com-info"><em>평일</em> <b>오전 9시~오후 6시 (점심시간 12시~1시)</b></span>
                     <span class="com-info">주말 및 공휴일 휴무</span>
-                    <p class="com-info"><em>이메일</em> <a href="#">@hansalim.or.kr</a></p>
+                    <p class="com-info"><em>이메일</em> <a href="#">hansalim@hansalim.or.kr</a></p>
                     <span class="com-info">* 매장 구입 물품은 해당 매장 문의</span>
                 </div>
                 <div class="com-box">

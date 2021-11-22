@@ -31,10 +31,10 @@ html {
 body {
     font-family: 'Roboto', 'noto-latin-ko', '맑은고딕', sans-serif;
     font-size: 1.5rem;
-    color: #000;
     font-weight: 400;
-    line-height: 1.6;
+    line-height: 1.6rem;
     letter-spacing: -0.0375rem;
+    color: #000;
     word-break: break-all;
 }
 
@@ -110,7 +110,7 @@ body {
     display: block;
     width: 3.6rem;
     height: 2.6rem;
-    background: url(../images/icoFloating.png) no-repeat;
+    background: url('../images/icoFloating.png') no-repeat;
     background-position: 0 -0.3rem;
     margin: 0 auto;
 }
@@ -121,7 +121,7 @@ body {
     display: block;
     width: 3.6rem;
     height: 2.9rem;
-    background: url(../images/icoFloating.png) no-repeat;
+    background: url('../images/icoFloating.png') no-repeat;
     background-position: 0 -3.4rem;
     margin: 0 auto;
 }
@@ -132,7 +132,7 @@ body {
     display: block;
     width: 3.6rem;
     height: 3rem;
-    background: url(../images/icoFloating.png) no-repeat;
+    background: url('../images/icoFloating.png') no-repeat;
     background-position: 0 -6.4rem;
     margin: 0 auto;
 }
@@ -142,8 +142,8 @@ body {
     position: relative;
     display: block;
     width: 3.6rem;
-    height: 2.9remrem;
-    background: url(../images/icoFloating.png) no-repeat;
+    height: 2.9rem;
+    background: url('../images/icoFloating.png') no-repeat;
     background-position: 0 -9.7rem;
     margin: 0 auto;
 }
@@ -152,7 +152,7 @@ body {
     margin-top: 0.5rem;
 }
 
-.fix-menu>ul>li>a>img {
+.fix-menu ul>li>a>img {
     width: 5rem;
     height: 5rem;
 }
@@ -207,13 +207,6 @@ body {
     margin-bottom: 1.5rem;
 }
 
-.mymenu {
-    position: relative;
-    display: block;
-    padding-top: 3rem;
-    z-index: 999;
-}
-
 .header-top>.left {
     padding-top: 3rem;
 }
@@ -221,83 +214,84 @@ body {
 .logo {
     position: relative;
     display: inline-block;
-    margin-right: 1.4rem;
+    border: 0;
+    vertical-align: top;
 }
 
 .calendar {
     position: relative;
     display: inline-block;
-    font-family: 'Roboto', 'noto-latin-ko', '맑은고딕', sans-serif;
-    font-size: 1.3rem;
-    color: #666;
-    font-weight: 400;
-    line-height: 1.9rem;
-    letter-spacing: -0.0325rem;
+    margin-left: 1.5rem;
+    border: 0;
+    vertical-align: -0.8rem;
 }
 
 .calendar>img {
-    vertical-align: top;
+    margin-right: 0.5rem;
+    vertical-align: -0.2rem;
 }
 
 .calendar>span {
     font-size: 1.3rem;
-    color: #666;
     font-weight: 400;
-    line-height: 1.3px;
+    line-height: 1.9rem;
     letter-spacing: -0.0325rem;
-    padding-left: 0.1rem;
+    padding-right: 1.5rem;
+    color: #666;
+}
+
+.mymenu {
+    position: absolute;
+    right: 0;
+    top: 2.5rem;
+    display: block;
 }
 
 .mymenu>li {
     position: relative;
     display: block;
     float: left;
-    font-family: 'Roboto', 'noto-latin-ko', '맑은고딕', sans-serif;
-    font-size: 1.3rem;
-    color: #666;
-    font-weight: 400;
-    line-height: 1.9rem;
-    letter-spacing: -0.025rem;
-    margin-left: 1rem;
-    padding-left: 1rem;
-}
-
-.mymenu>li::after {
-    content: '';
-    position: absolute;
-    right: -1.2rem;
-    top: 0.6rem;
-    display: block;
-    width: 0.1rem;
-    height: 0.8rem;
-    background-color: #bbb;
-}
-
-.mymenu>li:last-child::after {
-    display: none;
 }
 
 .mymenu>li>a {
     position: relative;
     display: block;
+    font-size: 1.3rem;
+    line-height: 1.9rem;
     color: #666;
+    vertical-align: top;
+    padding-right: 1.5rem;
 }
 
-.mymenu>li:nth-child(3)>a {
-    padding-right: 2.6rem;
+.mymenu>li:last-child>a {
+    padding-right: 0;
 }
+
+.mymenu>li:before {
+    content: '';
+    position: absolute;
+    left: -0.8rem;
+    top: 0.5rem;
+    width: 0.1rem;
+    height: 0.8rem;
+    background-color: #bbb;
+    display: block;
+}
+
+.mymenu>li:first-child:before {
+    content: none;
+}
+
+.mymenu>li:nth-child(3)>a {}
 
 .mymenu>li:nth-child(3)>a::after {
     content: '';
-    position: absolute;
-    right: 0.5rem;
-    top: 0.6rem;
+    position: relative;
+    display: inline-block;
     width: 1rem;
     height: 0.6rem;
-    background: url(../images/icoMyMenu.png)no-repeat right top;
+    background: url(../images/icoMyMenu.png) no-repeat right top;
     background-position: 0px 0px;
-
-    /* margin-right: 0.5rem; */
 }
 
 .center-menu-active::after {
@@ -306,40 +300,38 @@ body {
 
 .center-submenu {
     position: absolute;
-    left: -2.9rem;
+    left: 50%;
     transform: rotateX(-50%);
     top: 2.5rem;
     display: none;
-    width: 100%;
     background-color: #fff;
     border: 0.1rem solid #ddd;
-    box-shadow: 0 3px 6px 0 rgb(0 0 0 / 16%);
+    box-shadow: 0 0.3rem 0.6rem 0 rgb(0 0 0 / 16%);
     margin-left: 0.5rem;
-    padding: 1rem 12rem 2rem 2rem;
+    padding: 1rem 2rem 2rem 2rem;
+    z-index: 3;
 }
 
 .center-submenu>li {
+    position: relative;
+    display: block;
     margin-top: 1rem;
 }
 
 .center-submenu>li>a {
+    position: relative;
     display: inline-block;
+    font-size: 1.3rem;
+    line-height: 1.9rem;
     color: #666;
     white-space: nowrap;
-}
-
-.center-submenu>li>a:hover {
-    color: #000;
-    letter-spacing: -0.0325rem;
-    line-height: 1.9rem;
-    text-decoration: underline;
 }
 
 .center-submenu>li>a::after {
     content: '';
     position: absolute;
     left: 0;
-    bottom: ;
+    bottom: 0;
     display: block;
     width: 100%;
     height: 0.1rem;
@@ -347,7 +339,7 @@ body {
     visibility: hidden;
 }
 
-.center-submenu>li>a::after:hover {
+.center-submenu>li>a:hover::after {
     visibility: visible;
 }
 
@@ -428,7 +420,7 @@ body {
     font-size: 1.7rem;
     font-weight: 500;
     letter-spacing: -0.0425rem;
-    line-height: 2.5rem;
+    line-height: 1.8rem;
 }
 
 .category-list>li>a:hover {
@@ -446,11 +438,6 @@ body {
     height: 0.5rem;
     border-radius: 50%;
     background-color: #f58320;
-}
-
-.category-list-more {
-    position: relative;
-    display: block;
 }
 
 .category-list-more::after {
@@ -481,9 +468,9 @@ body {
     display: block;
     background-color: #fff;
     padding: 1.5rem 2rem;
-    border: 0.1rem solid #e5e5e5;
     border: 0.1rem solid #ddd;
-    box-shadow: 0 0.3rem 0.6prem 0 rgb(0 0 0 / 16%);
+    box-shadow: 0 0.3rem 0.6rem 0 rgb(0 0 0 / 16%);
+    display: none;
 }
 
 .category-list-2>li {
@@ -493,7 +480,7 @@ body {
 
 .category-list-2>li>a {
     position: relative;
-    display: imline-block;
+    display: inline-block;
     white-space: nowrap;
     font-size: 1.5rem;
     font-weight: 400;
@@ -553,8 +540,9 @@ body {
 
 .see-more-bt-close {
     position: relative;
-    display: none;
+    display: block;
     color: #7abd42;
+    display: none;
 }
 
 .see-more-bt-close::after {
@@ -574,11 +562,12 @@ body {
     left: 50%;
     transform: translateX(-50%);
     top: 3.8rem;
-    display: none;
+    display: block;
     background-color: #fff;
     padding: 1.5rem 2.0rem;
     border: 0.1rem solid #ddd;
     box-shadow: 0 0.3rem 0.6rem 0 rgb(0 0 0 / 16%);
+    display: none;
 
 }
 
@@ -626,7 +615,6 @@ body {
     padding-right: 4rem;
     background-color: #f7f7f7;
     border-radius: 2rem;
-    width: 32.5rem;
 }
 
 .s-txt-label {
@@ -641,7 +629,7 @@ body {
     z-index: 9;
 }
 
-.searsh-form-txt {
+.search-form-txt {
     position: relative;
     display: block;
     border: none;
@@ -653,7 +641,7 @@ body {
     width: 100%;
 }
 
-.searsh-form-txt:focus+.s-txt-label {
+.search-form-txt:focus+.s-txt-label {
     display: none;
 }
 
@@ -688,8 +676,8 @@ body {
     white-space: nowrap;
     line-height: 1.8rem;
     color: #fff;
-    border-radius: 50%;
     background-color: #76bd42;
+    border-radius: 50%;
 }
 
 /* 비주얼 영역 */
@@ -714,6 +702,13 @@ body {
 .swiper-wrapper {}
 
 .swiper-slide {}
+
+/* 각 슬라이드의 내용은 컨트롤 한다. */
+.sw-visual .swiper-slide a {
+    position: relative;
+    display: block;
+    text-align: center;
+}
 
 /* 좌측 이동버튼 */
 .sw-visual-prev {
@@ -757,13 +752,6 @@ body {
     cursor: pointer;
 }
 
-/* 각 슬라이드의 내용은 컨트롤 한다. */
-.sw-visual .swiper-slide a {
-    position: relative;
-    display: block;
-    text-align: center;
-}
-
 /* 슬라이드 콘트롤러 */
 .sw-visual-control {
     position: absolute;
@@ -798,7 +786,6 @@ body {
     width: 5.2rem;
     height: 3rem;
     background: url('../images/visualNum.png') no-repeat center;
-    /* bottom: 0; */
     color: #fff;
     text-align: center;
     line-height: 3rem;
@@ -837,7 +824,6 @@ body {
 .good-list {
     position: relative;
     display: block;
-    margin-bottom: 7rem;
 }
 
 .mb-70 {
@@ -885,7 +871,7 @@ body {
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%) scale(0.8);
+    transform: translate(-50%, -50%) scale(0.9);
     mix-blend-mode: multiply;
     transition: transform 0.5s;
 }
@@ -1020,7 +1006,7 @@ body {
     letter-spacing: -0.0375rem;
     line-height: 3.4rem;
     text-align: center;
-    color: #000;
+    color: #666;
     border: 0.1rem solid #bbb;
     background-color: #fff;
     transition: background-color 0.5s;
@@ -1148,7 +1134,7 @@ body {
     letter-spacing: -0.0375rem;
     line-height: 3.4rem;
     text-align: center;
-    color: #000;
+    color: #666;
     border: 0.1rem solid #bbb;
     background-color: #fff;
     transition: background-color 0.5s;
@@ -1195,7 +1181,7 @@ body {
     line-height: 1.48;
     letter-spacing: -0.0625rem;
     color: #000;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.5rem;
 }
 
 .new-main-desc {
@@ -1235,7 +1221,6 @@ body {
 }
 
 .new-good-img img {
-    position: relative;
     width: 100%;
     height: auto;
 }
@@ -1276,8 +1261,8 @@ body {
     line-height: 1.25;
     letter-spacing: -0.08rem;
     color: #000;
-    padding-bottom: 2.0rem;
-    margin-bottom: 2.0rem;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
 }
 
 .pick-box-title::after {
@@ -1307,7 +1292,7 @@ body {
     font-size: 1.7rem;
     font-weight: 400;
     line-height: 1.7;
-    letter-spacing: -0.0425;
+    letter-spacing: -0.0425rem;
     color: #333;
     margin-bottom: 2.5rem;
 }
@@ -1338,11 +1323,11 @@ body {
     height: 2rem;
     background: url('../images/swiperArrP.png') no-repeat;
     background-position: 0 0;
-    cursor: pointer;
 }
 
 .sw-pick-prev:hover {
     background-position: 0 -2rem;
+    cursor: pointer;
 }
 
 .sw-pick-next {
@@ -1354,11 +1339,11 @@ body {
     height: 2rem;
     background: url('../images/swiperArrN.png') no-repeat;
     background-position: 0 0;
-    cursor: pointer;
 }
 
 .sw-pick-next:hover {
     background-position: 0 -2rem;
+    cursor: pointer;
 }
 
 .sw-pick-pg {
@@ -1439,7 +1424,7 @@ body {
     letter-spacing: -0.0375rem;
     line-height: 3.4rem;
     text-align: center;
-    color: #000;
+    color: #666;
     border: 0.1rem solid #bbb;
     background-color: #fff;
     transition: background-color 0.5s;
@@ -1495,7 +1480,7 @@ body {
 }
 
 .sw-famous .swiper-slide>a:hover::before {
-    background-positio: 0 -6.4rem;
+    background-position: 0 -6.4rem;
 }
 
 .famous-icon-1::before {
@@ -1631,7 +1616,6 @@ body {
 .brand {
     position: relative;
     display: block;
-    padding: 8rem, 0;
     background-color: #f3f9f0;
     padding: 8rem 0;
 }
@@ -1689,7 +1673,7 @@ body {
     letter-spacing: -0.0375rem;
     line-height: 3.4rem;
     text-align: center;
-    color: #000;
+    color: #666;
     border: 0.1rem solid #bbb;
     background-color: #fff;
     transition: background-color 0.5s;
@@ -1702,14 +1686,14 @@ body {
 .sw-brand-control {
     position: absolute;
     left: 0;
-    top: 27rem;
+    top: 29.5rem;
     display: block;
 }
 
 .sw-brand-prev {
     position: absolute;
     left: 0;
-    top: 0;
+    bottom: 0;
     display: block;
     width: 2.6rem;
     height: 2rem;
@@ -1725,7 +1709,7 @@ body {
 .sw-brand-next {
     position: absolute;
     left: 11.5rem;
-    top: 0;
+    bottom: 0;
     display: block;
     width: 2.6rem;
     height: 2rem;
@@ -1740,10 +1724,11 @@ body {
 
 .sw-brand-pg {
     left: 2.6rem;
-    top: 0;
+    bottom: 0;
     width: 9rem;
     font-size: 1.6rem;
     font-weight: 400;
+    line-height: 1.5;
     letter-spacing: -0.04rem;
     color: #bbb;
 }
@@ -1797,6 +1782,7 @@ body {
 .active-box-txt {
     position: relative;
     display: block;
+    width: 100%;
     overflow: hidden;
     margin-top: 3rem;
 }
@@ -1854,11 +1840,6 @@ body {
     width: 100%;
 }
 
-.swiper-container {
-    width: 100%;
-    height: 100%;
-}
-
 .sw-banner-prev {
     position: absolute;
     left: 2rem;
@@ -1892,36 +1873,8 @@ body {
 
 .sw-banner-next:hover {
     background-position: 0 0;
-    cursor: pointer
-}
-
-.sw-banner .swiper-slide a {
-    position: relative;
-    display: block;
-    text-align: center;
-}
-
-.sw-banner-control {
-    position: absolute;
-    left: calc(50% - 53rem);
-    bottom: 4rem;
-    display: block;
-    z-index: 99;
-}
-
-.sw-banner-bt {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    display: inline-block;
-    width: 3rem;
-    height: 3rem;
-    background: url('../images/visualPlay.png') no-repeat;
-    background-position: 0 0;
     cursor: pointer;
 }
-
-.swiper-pagination {}
 
 /* 제철요리 */
 .recipe {
@@ -1969,15 +1922,17 @@ body {
     position: absolute;
     left: 0;
     bottom: 0;
+    display: block;
     width: 15.5rem;
     height: 15.5rem;
     font-size: 2.5rem;
     font-weight: 700;
-    line-height: 1.2;
+    line-height: 1;
     letter-spacing: -0.0625rem;
     color: #fff;
-    background-color: #76bd42;
-    padding: 9.5rem 0 2.9rem 1.5rem;
+    background-color: #76bc42;
+    padding-left: 1.5rem;
+    padding-top: 9.5rem;
 }
 
 .recipe-img-right {
@@ -2040,7 +1995,6 @@ body {
 }
 
 .recipe-con-item-bt {
-    content: '';
     position: absolute;
     left: 0;
     top: 50%;
@@ -2062,22 +2016,21 @@ body {
     height: 100%;
 }
 
-.recipe-cocn-img {
+.recipe-con-img {
     position: relative;
     display: block;
     width: 7rem;
     height: 7rem;
+    float: left;
     overflow: hidden;
     background-color: #f1f1f1;
 }
 
-.recipe-cocn-img img {
+.recipe-con-img img {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    display: block;
-    float: left;
     width: 100%;
     height: auto;
     mix-blend-mode: multiply;
@@ -2086,7 +2039,7 @@ body {
 .recipe-con-txt {
     position: relative;
     display: block;
-    float: right;
+    float: left;
     font-size: 1.5rem;
     font-weight: 400;
     letter-spacing: -0.0375rem;
@@ -2112,18 +2065,17 @@ body {
     position: relative;
     display: block;
     width: 100%;
-    padding: 3.5rem 0;
     font-size: 2rem;
     font-weight: 400;
     letter-spacing: -0.05rem;
     line-height: 1;
     color: #000;
+    padding: 3.5rem 0;
     padding-left: 4rem;
     border-top: 0.1rem solid #ddd;
 }
 
 .recipe-con-count-bt {
-    content: '';
     position: absolute;
     left: 0;
     top: 50%;
@@ -2182,7 +2134,7 @@ body {
     position: relative;
     display: block;
     width: 30rem;
-    height: 28.5rem;
+    height: 100%;
 }
 
 .review-box-title {
@@ -2222,29 +2174,10 @@ body {
     margin-bottom: 2.5rem;
 }
 
-.review-box-link {
-    position: relative;
-    display: block;
-    width: 11.4rem;
-    font-size: 1.3rem;
-    font-weight: 400;
-    letter-spacing: -0.0375rem;
-    line-height: 3.4rem;
-    text-align: center;
-    color: #000;
-    border: 0.1rem solid #bbb;
-    background-color: #fff;
-    transition: background-color 0.5s;
-}
-
-.review-box-link:hover {
-    background-color: #f8f8f8;
-}
-
 .sw-review-control {
     position: absolute;
     left: 0;
-    top: 28rem;
+    top: 24rem;
     display: block;
 }
 
@@ -2302,6 +2235,8 @@ body {
     height: 100%;
 }
 
+.sw-review {}
+
 .review-list {
     position: relative;
     display: block;
@@ -2317,7 +2252,7 @@ body {
     margin-bottom: 3rem;
 }
 
-.reivew-list-name {
+.review-list-name {
     display: block;
     width: 16.5rem;
     font-size: 1.7rem;
@@ -2332,7 +2267,7 @@ body {
     margin-bottom: 0.5rem;
 }
 
-.reivew-list-rating {
+.review-list-rating {
     display: block;
     width: 5rem;
     font-size: 1.7rem;
@@ -2340,11 +2275,12 @@ body {
     letter-spacing: -0.0425rem;
     line-height: 1.176;
     color: #000;
-    background: url(../images/icoRating.png) no-repeat left center;
+    background: url('../images/icoRating.png') no-repeat left center;
     padding-left: 2.5rem;
+    white-space: nowrap;
 }
 
-.reivew-list-img {
+.review-list-img {
     position: absolute;
     right: 0;
     top: 0;
@@ -2354,7 +2290,7 @@ body {
     overflow: hidden;
 }
 
-.reivew-list-img img {
+.review-list-img img {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -2389,7 +2325,7 @@ body {
     font-size: 1.3rem;
     font-weight: 400;
     letter-spacing: -0.0325rem;
-    line-height: 1.38;
+    line-height: 1.538;
     color: #000;
 }
 
@@ -2504,7 +2440,7 @@ body {
     letter-spacing: normal;
     line-height: 1.187;
     color: #76bd42;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
 }
 
 .com-info {
@@ -2512,9 +2448,9 @@ body {
     font-size: 1.3rem;
     font-weight: 400;
     letter-spacing: -0.0325rem;
-    line-height: 1.46;
+    line-height: 1.461;
     color: #000;
-    margin-top: 0.9rem;
+    margin-top: 1rem;
 }
 
 .com-info em {
@@ -2534,25 +2470,24 @@ body {
 .com-link-wrap {
     position: relative;
     display: block;
-    font-size: 1.3rem;
-    font-weight: 500;
-    letter-spacing: -0.0325rem;
-    line-height: 2.769;
-    color: #333;
     margin-top: 1.5rem;
 }
 
 .com-link-wrap a {
     display: block;
     float: left;
-    width: 48%;
+    width: 48.5%;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #333;
+    letter-spacing: -0.0325rem;
     line-height: 3.8rem;
-    margin-right: 3%;
-    padding: 0 1.3rem;
     border: 0.1rem solid #e4e4e4;
     background: url(../images/icoFaq.png) no-repeat;
     background-position: calc(100% - 1.3rem) 50%;
+    margin-right: 2.5%;
     margin-bottom: 1rem;
+    padding: 0 1.3rem;
 }
 
 .com-link-wrap a:nth-child(2n) {
@@ -2625,28 +2560,28 @@ body {
     padding: 2rem 1.5rem;
 }
 
-.footer-sitemap>a {
+.footer-sitemap a {
     display: block;
     font-size: 1.3rem;
-    font-weight: 500;
+    font-weight: 400;
     letter-spacing: -0.0325rem;
     line-height: 1.4615;
     color: #666;
 }
 
-.footer-sitemap>a span {
+.footer-sitemap a span {
     display: inline-block;
     width: 3rem;
 }
 
-.footer-sitemap>a::after {
+.footer-sitemap a::after {
     content: '';
     position: relative;
     display: inline-block;
     width: 1.2rem;
     height: 1.2rem;
     background: url(../images/btnMore.png) no-repeat center;
-    vertical-align: -0.2rem;
+    vertical-align: 0;
     margin-left: 0.5rem;
 }
 
@@ -2725,7 +2660,7 @@ body {
     letter-spacing: -0.0275rem;
     line-height: 1.45;
     color: #999;
-    margin-top: 2rem;
+    margin-top: 3rem;
 }
 
 .footer-sns {
@@ -2733,7 +2668,7 @@ body {
     display: block;
     float: right;
     overflow: hidden;
-    padding: 1rem;
+    padding-top: 1rem;
 }
 
 .footer-sns a {
@@ -2741,7 +2676,7 @@ body {
     float: left;
     width: 2.6rem;
     height: 2.6rem;
-    background: url(../images/ftSns.png) no-repeat;
+    background: url('../images/ftSns.png') no-repeat;
     margin-left: 1rem;
 }
 
@@ -2765,7 +2700,7 @@ body {
     background-position: 0 -10.4rem;
 }
 
-.sitemap-active {
+.footer-sitemap-active {
     background-color: #f4f4f4 !important;
 }
 
